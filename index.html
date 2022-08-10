@@ -5,87 +5,261 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Equipamentos esportivos</title>
-    
+    <title>Sistema de Gestão Escolar</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css.css">
+    <link rel="stylesheet" href="./css.css">
 </head>
 
-<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="navbarsuspenso">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <div><img src="./img/logo1 (1).png" alt="" id="logo"></div>
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active " href="#" id="NavBarTopo" onclick="troca('home')">Home</a>
+                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " href="#" id="NavBarTopo" onclick="troca('cadastro')">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="NavBarTopo" onclick="troca('resultado')">Consultas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " href="#" id="NavBarTopo" onclick="troca('grade')">Calendario
+                            Escolar</a>
+                    </li>                    
+
+                </ul>
+               
+            </div>
+        </div>
+    </nav>
+
+    <div id="grade">
 
 
+<div id="calendario"><h1>Calendario do ano letivo de 2022</h1></div>
+        <div class="card1" style="width: 40%;" id="cardCentralizado"><a href="./img/calendario2.jpg"> <img
+                    src="./img/calendario.jpg" class="card-img-top" alt="..."></a>
+
+            <div class="card-body ">
+               
+            </div>
+        </div>
+
+    </div>
+
+    <div class="alert alert-success" id="msg" role="alert">
+      Cadastro realizado com sucesso!!!
+  </div>
+  <div class="alert alert-warning" id="msg2" role="alert">
+   Selecione Aluno ou Professor!
+</div>
     <form class="container " id="cad-equip">
-        <fieldset class="formulario col-md-4  ">
+        
+        <fieldset class="formulario col-md-4  " id="formulario2">
 
-            <!-- Form Name -->
+            <select class="form-select form-select-lg mb-3" id="tipoInput" aria-label=".form-select-lg example" >
+                <option selected value="0">Cadastre Aluno ou Professor</option>
+                <option value="Aluno">Aluno</option>
+                <option value="Professor">Professor</option>
+              </select>
+              
+            <!-- //////////////////// -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nomeInput" aria-describedby="emailHelp" placeholder="Digite seu nome">
+                
+              </div>
 
-            <legend class="topo "> Equipamentos Esportivos</legend>
-            
+              <!-- ////////////////// -->
 
-            <!-- Text input-->
-            <div class="form-group">
-            <label class="col-md-4 control-label" for="nomeInput">Nome do Produto</label>
-                <div class="col-md-6">
-                    <input id="nomeInput" name="nomeInput" type="text" placeholder="digite o nome do produto"
-                        class="form-control input-md" required="">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Idade</label>
+                <input type="number" class="form-control col-md-4" id="idadeInput" aria-describedby="emailHelp"placeholder="Digite sua idade">
+                
+              </div>
+   
 
-                </div>
+         
+
+            <label class="col-md-6 control-label" for="turmaInput">Turmas</label>
+            <div class="col-md-6">
+                <select id="turmaInput" name="turmaInput" class="form-control col-md-6">
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+
+                </select>
+            </div>
             </div>
 
-            <!-- Select Basic -->
-            <div class="form-group">
-                <label class="col-md-6 control-label" for="atividadeInput">Atividade</label>
-                <div class="col-md-6">
-                    <select id="atividadeInput" name="atividadeInput" class="form-control col-md-6">
-                        <option value="Futebol">Futebol</option>
-                        <option value="Volei">Volei</option>
-                        <option value="Handball">Hand ball</option>
-                        <option value="Ciclismo">Ciclismo</option>
-                        <option value="Atletismo">Atletismo</option>
-                        <option value="Natacao">Natação</option>
-                    </select>
-                </div>
+
+            <label class="col-md-6 control-label" for="cursosInput">Cursos</label>
+            <div class="col-md-6">
+                <select id="cursosInput" name="cursosInput" class="form-control col-md-6">
+                    
+                    <option value="Sistemas de Informação">Sistemas de Informação</option>
+                    <option value="Análise de Sistemas">Análise de Sistemas</option>
+                    <option value="Ciência da Computação">Ciência da Computação</option>
+                    <option value="Engenharia da Computação">Engenharia da Computação</option>
+                    <option value="Gestão em Tecnologia da Informação">Gestão em Tecnologia da Informação</option>
+
+
+                </select>
+            </div>
             </div>
 
-            <!-- Textarea -->
-            <div class="form-group">
-                <label class="col-md-6 control-label" for="descricaoInput">Descrição</label>
-                <div class="col-md-6">
-                    <textarea class="form-control" id="descricaoInput"
-                        name="descricaoInput">Digite a descrição dos produtos</textarea>
-                </div>
-            </div>
+           
 
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="precoInput">Preço</label>
-                <div class="col-md-6">
-                    <input id="precoInput" name="precoInput" type="number" placeholder="Digite o Preço do Produto"
-                        class="form-control input-md" required=" >
 
-                </div>
-            </div>
+
+
             <!-- Button -->
             <div class="form-group"><br>
-              
-                    <button id="singlebutton" name="singlebutton" class="btn btn-primary btn-success col-md-11" onclick= "Cadastrar()">Cadastrar</button><br><br>
-          
-                    <button id="singlebutton" name="singlebutton" class="btn btn-primary btn-warning col-md-5 botao " onclick= "exibir()" >Exibir</button>
-            
-                    <button id="singlebutton" name="singlebutton" class="btn btn-primary col-md-5 botao" onclick= "window.print()" >Imprimir</button>
-                </div>
+
+
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary btn-success col-md-12"
+                    onclick="todosCadastros()">Cadastrar</button><br><br>
+
+
             </div>
-
+            </div>
+            
         </fieldset>
-       
-      
-    </form>
+        
 
-<hr>
-    <div id="cadastros" class="container"></div>
-  
-  
+
+    </form>
+<br>
+
+    <nav class="navbar navbar-dark bg-transparent container" id="resultado">
+        <form class="container-fluid justify-content-start " id="NavBarConsulta2">
+
+            <li class="nav-item dropdown bg-transparent text-white" id="dropdown1">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown"  data-bs-toggle="dropdown" aria-expanded="false"><br>
+                  ALUNOS
+                </a>
+                <ul class="dropdown-menu shadow p-3 mb-5 bg-body rounded" id="Ular">
+                  <li><a class="dropdown-item " href="#"onclick="exibirAlunos()">Todos os Alunos</a></li>
+                  <hr class="dropdown-divider">
+                  <li><a class="dropdown-item" href="#"onclick="exibirMaiordeidade()">Maiores de Idade</a></li> 
+                  <hr class="dropdown-divider"> 
+                  <li><a class="dropdown-item" href="#"onclick="exibirMenordeidade()">Menores de Idade</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown bg-transparent text-white" id="dropdown1">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown"  data-bs-toggle="dropdown" aria-expanded="false"><br>
+                  PROFESSORES
+                </a>
+                <ul class="dropdown-menu shadow p-3 mb-5 bg-body rounded" id="Ular">
+                  <li><a class="dropdown-item " href="#"onclick="exibirProfessores()">Todos os Professores</a></li>
+                  <hr class="dropdown-divider">
+
+                </ul>
+              </li>
+        
+
+          
+
+                <li class="nav-item dropdown bg-transparent text-white" id="dropdown1">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><br>
+                      TURMAS
+                    </a>
+                    <ul class="dropdown-menu shadow p-3 mb-5 bg-body rounded " id="Ular">
+                      
+                      <hr class="dropdown-divider">
+                      <p id="PBlack">Turmas por turno</p> 
+                      <hr class="dropdown-divider">
+                      <li><a class="dropdown-item " href="#"onclick="exibirTurmasManha()">Manhã</a></li>
+                      <hr class="dropdown-divider">
+                      <li><a class="dropdown-item" href="#"onclick="exibirTurmasTarde()">Tarde</a></li>
+                      <hr class="dropdown-divider">  
+                      <li><a class="dropdown-item" href="#"onclick="exibirTurmasNoite()">Noite</a></li>
+                      <hr class="dropdown-divider">
+                      <p id="PBlack"></p> 
+                      <hr class="dropdown-divider">
+                      <li><a class="dropdown-item " href="#"onclick="exibirTodasTurmas()">Todas as Turmas</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown bg-transparent text-white" id="dropdown1">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><br>
+                      GERAL
+                    </a>
+                    <ul class="dropdown-menu shadow p-3 mb-5 bg-body rounded" id="Ular">
+                      <li><a class="dropdown-item " href="#"onclick="exibirTodasTurmas()">Todas as Turmas</a></li>
+                      <hr class="dropdown-divider">
+                      <li><a class="dropdown-item " href="#"onclick="exibirProfessores()">Todos os Professores</a></li>
+                      <hr class="dropdown-divider">
+                      <li><a class="dropdown-item" href="#"onclick="exibirAlunos()">Todos os Alunos</a></li>  
+                     
+                    </ul>
+                  </li>
+
+                
+          
+        </form>
+    </nav>
+<!-- //////////////////////////HOME///////////////////////////////// -->
+   <section id="home" >
+    
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+       
+      </div>
+      <div class="carousel-inner" id="CAROUSEL">
+        <div class="carousel-item active"id="carouselVideo">
+          <video class="video-fluid " autoplay loop controls muted id="carouselVideo">
+            <source src="./img/v1.mp4" type="video/mp4" / id="carouselVideo">
+          </video>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-item active"id="carouselVideo">
+            <video class="video-fluid " autoplay loop controls muted id="carouselVideo">
+              <source src="./img/v3.mp4" type="video/mp4" / id="carouselVideo">
+            </video>
+          </div>
+        </div>
+       
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+   </section>
+<!-- ///////////////////////////////////////////////////////////////// -->
+    <div id="cadastros"></div>
+
+
+
+    </section>
+
+    <!-- //// inicio do carousel ///// -->
+
+
+
+
+
+
 
 
 
@@ -100,10 +274,9 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-
         crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </body>
 
 </html>
